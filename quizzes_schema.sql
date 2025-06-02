@@ -1,0 +1,28 @@
+-- Esquema para quizzes y preguntas tipo test
+
+CREATE TABLE IF NOT EXISTS quizzes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  difficulty ENUM('Fácil', 'Medio', 'Difícil') DEFAULT 'Medio',
+  slug VARCHAR(100) NOT NULL UNIQUE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS quiz_questions (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  quiz_id INT NOT NULL,
+  question_text TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS quiz_answers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  question_id INT NOT NULL,
+  answer_text TEXT NOT NULL,
+  is_correct BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (question_id) REFERENCES quiz_questions(id) ON DELETE CASCADE
+); 
