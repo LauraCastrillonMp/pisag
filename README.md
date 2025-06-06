@@ -11,6 +11,7 @@ Está dirigida a estudiantes, aficionados al espacio y autodidactas mayores de 1
 - 🧠 Quizzes para poner a prueba tus conocimientos
 - 💬 Información acerca de temas astronomicos
 - 🛠️ Inicios de sesión y registro
+- 🚀 Galeria por medio de la API de la nasa (https://github.com/nasa/apod-api)
 
 ---
 
