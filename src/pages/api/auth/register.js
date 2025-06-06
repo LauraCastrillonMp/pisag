@@ -1,7 +1,8 @@
 import { hash } from "bcryptjs"
-import { sign } from "jsonwebtoken"
+import jwt from "jsonwebtoken"
 import cookie from "cookie"
 import db from "../../../lib/db"
+import { serialize } from "cookie"
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -41,27 +42,17 @@ export default async function handler(req, res) {
     const user = users[0]
 
     // Create JWT token
-    const token = sign(
-      {
-        id: user.id,
-        email: user.email,
-        role: user.role,
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: "7d" },
-    )
-
-    // Set cookie
-    res.setHeader(
-      "Set-Cookie",
-      cookie.serialize("auth_token", token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV !== "development",
-        sameSite: "strict",
-        maxAge: 60 * 60 * 24 * 7, // 1 week
-        path: "/",
-      }),
-    )
+    const token = jwt.sign({ id: user.id, name: user.name, email: user.email, role: user.role }, process.env.JWT_SECRET, { expiresIn: "30d" })
+    
+        const serialized = serialize('auth_token', token, {
+          httpOnly: true, // Only displays in HTTP requests(development only)
+          secure: process.env.NODE_ENV === 'production',
+          sameSite: 'strict',
+          maxAge: 1000 * 60 * 60 * 24 * 30, // 30 days
+          path: '/',
+        })
+    
+        res.setHeader('Set-Cookie', serialized);
 
     return res.status(201).json({
       message: "User created successfully",

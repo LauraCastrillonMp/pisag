@@ -1,4 +1,4 @@
-import styles from '../../styles/Hamburger.module.css';
+import styles from '../../../styles/Hamburger.module.css';
 
 export default function Hamburger({ isOpen }) {
   const colorClass = isOpen ? styles.burgerOpen : styles.burgerClosed;

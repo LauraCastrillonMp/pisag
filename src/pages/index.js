@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"
 import Head from "next/head"
-import Link from "next/link"
+import Footer from "../components/layout/Footer"
 import styles from "../styles/Home.module.css"
 import Informacion from "./informacion"
-import NavBar from "../components/navbar/NavBar"
+import NavBar from "../components/layout/navbar/NavBar"
+import LatestNewsCard from "../components/ui/cards/news/LatestNewsCard"
 
 export default function Home({ latestNews, informacion }) {
   const [featuredImage, setFeaturedImage] = useState('')
@@ -53,29 +54,9 @@ export default function Home({ latestNews, informacion }) {
 
         <Informacion topics={informacion} />
 
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Últimas Noticias</h2>
-          <div className={styles.grid}>
-            {latestNews &&
-              latestNews.map((news) => (
-                <Link href={`/noticias/${news.id}`} key={news.id} className={styles.card}>
-                  <img src={news.image_url || "/placeholder.svg"} alt={news.title} className={styles.cardImage} />
-                  <h3>{news.title}</h3>
-                  <p>{news.summary}</p>
-                  <small className={styles.date}>{new Date(news.created_at).toLocaleDateString("es-ES")}</small>
-                </Link>
-              ))}
-            <Link href="/noticias" className={styles.card}>
-              <h3>Ver todas las noticias &rarr;</h3>
-              <p>Accede a nuestro archivo completo de noticias astronómicas.</p>
-            </Link>
-          </div>
-        </section>
+        <LatestNewsCard latestNews={latestNews} />
       </main>
-
-      <footer className={styles.footer}>
-        <p>Portal de Astronomía © {new Date().getFullYear()}</p>
-      </footer>
+      <Footer />
     </div>
   )
 }

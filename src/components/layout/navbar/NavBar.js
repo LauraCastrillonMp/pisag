@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Hamburger from "./Hamburger";
-import styles from "../../styles/NavBar.module.css";
-import { useSession } from "../../lib/auth";
+import styles from "../../../styles/NavBar.module.css";
+import { useSession } from "../../../lib/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
 

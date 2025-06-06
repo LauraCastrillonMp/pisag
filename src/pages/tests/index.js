@@ -1,7 +1,7 @@
 "use client"
 
 import Head from "next/head"
-import Link from "next/link"
+import TestCard from "../../components/ui/cards/TestCard"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import { useSession } from "../../lib/auth"
@@ -60,21 +60,7 @@ export default function TestsIndex() {
         ) : tests.length === 0 ? (
           <div className={styles.emptyState}>No hay tests disponibles.</div>
         ) : (
-          <div className={styles.quizGrid}>
-            {tests.map(test => (
-              <div key={test.id} className={styles.quizCard}>
-                <div className={styles.quizTitle}>{test.title}</div>
-                {test.description && <div className={styles.quizDescription}>{test.description}</div>}
-                <div className={styles.quizMeta}>
-                  <span className={styles.questionCount}>{test.questions?.length || 0} preguntas</span>
-                  {test.difficulty && <span className={styles.difficulty}>{test.difficulty}</span>}
-                </div>
-                <Link href={`/tests/${test.slug || test.id}`} className={styles.startButton}>
-                  Realizar test
-                </Link>
-              </div>
-            ))}
-          </div>
+          <TestCard tests={tests} />
         )}
       </main>
     </div>

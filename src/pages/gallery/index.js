@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "../../styles/Gallery.module.css";
+import Link from "next/link";
+import CardGallery from "../../components/ui/cards/GalleryCard";
 
 export default function Gallery({ initialPhotos }) {
   const [photos, setPhotos] = useState(initialPhotos);
@@ -15,17 +17,16 @@ export default function Gallery({ initialPhotos }) {
 
         <div className={styles.gallery}>
           {photos.map((photo) => (
-            <div key={cont++} className={styles.photoContainer}>
-              <img
-                src={photo.hdurl}
-                alt={photo.title}
-                className={styles.photo}
-              />
-              <p>{photo.title}</p>
-            </div>
+            <CardGallery key={cont++} title={photo.title} image={photo} />
           ))}
         </div>
       </div>
+
+      <footer className={styles.footer}>
+        <Link href="/" className={styles.backLink}>
+          &larr; Volver al inicio
+        </Link>
+      </footer>
     </div>
   );
 }
