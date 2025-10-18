@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { createNewsArticle } from "@/actions/admin"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/hooks/use-toast"
@@ -30,17 +31,26 @@ export default function NewNewsForm() {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await fetch("/api/admin/noticias", {
-        method: "POST",
-        body: JSON.stringify({ title, category, imageUrl, content }),
-        headers: { "Content-Type": "application/json" },
-      })
-      if (res.ok) {
-        toast({ title: "Noticia publicada", description: "La noticia se ha publicado correctamente.", variant: "success" })
-        router.push("/admin/noticias")
-      } else {
-        toast({ title: "Error", description: "No se pudo publicar la noticia.", variant: "destructive" })
-      }
+      // Use the action to create the news article
+      await createNewsArticle(new FormData(e.target as HTMLFormElement))
+
+      toast({ title: "Noticia publicada", description: "La noticia se ha publicado correctamente.", variant: "success" })
+      router.push("/admin/noticias")
+
+      
+
+
+      // const res = await fetch("/api/admin/noticias", {
+      //   method: "POST",
+      //   body: JSON.stringify({ title, category, imageUrl, content }),
+      //   headers: { "Content-Type": "application/json" },
+      // })
+      // if (res.ok) {
+      //   toast({ title: "Noticia publicada", description: "La noticia se ha publicado correctamente.", variant: "success" })
+      //   router.push("/admin/noticias")
+      // } else {
+      //   toast({ title: "Error", description: "No se pudo publicar la noticia.", variant: "destructive" })
+      // }
     } catch {
       toast({ title: "Error", description: "No se pudo publicar la noticia.", variant: "destructive" })
     }

@@ -55,7 +55,7 @@ export default async function NoticiaPage({ params }: { params: Promise<{ id: st
               <Calendar className="h-4 w-4" />
               {formatDate(article.published_at)}
             </span>
-            {article.author && (
+            {/* {article.author && (
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Avatar className="h-6 w-6">
                   <AvatarFallback className="text-xs bg-primary/20">
@@ -67,7 +67,7 @@ export default async function NoticiaPage({ params }: { params: Promise<{ id: st
                   {article.author.username}
                 </span>
               </div>
-            )}
+            )} */}
           </div>
 
           {/* Title */}

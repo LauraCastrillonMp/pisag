@@ -45,9 +45,9 @@ export default async function SeccionConocimientoPage({ params }: { params: Prom
       {/* Back Button */}
       <div className="container mx-auto px-4 py-6">
         <Button variant="ghost" asChild>
-          <Link href="/conocimiento">
+          <Link href="/">
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Volver a Conocimiento
+            Volver
           </Link>
         </Button>
       </div>
@@ -79,7 +79,7 @@ export default async function SeccionConocimientoPage({ params }: { params: Prom
 
               <div className="flex gap-4">
                 <Button size="lg" variant="outline" asChild>
-                  <Link href={`/conocimiento/${id}/contenido`}>
+                  <Link href={`/conocimiento/${section.title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]+/g, "")}/contenido`}>
                     <BookOpen className="h-5 w-5 mr-2" />
                     Ver Contenido
                   </Link>

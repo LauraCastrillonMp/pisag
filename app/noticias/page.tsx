@@ -110,12 +110,12 @@ export default async function NoticiasPage({
                         <Calendar className="h-4 w-4" />
                         <span>{formatDate(article.published_at)}</span>
                       </div>
-                      {article.author && (
+                      {/* {article.author && (
                         <div className="flex items-center gap-1">
                           <User className="h-4 w-4" />
                           <span>{article.author}</span>
                         </div>
-                      )}
+                      )} */}
                       <Badge variant="secondary" className="bg-blue-50 text-blue-700 border-blue-200">
                         En Noticias
                       </Badge>

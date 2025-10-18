@@ -152,3 +152,34 @@ export async function updateNewsArticle(id: string, updates: {
 
   return true
 }
+
+// export async function createNewsArticle(article: {
+//   title: string;
+//   content: string;
+//   category: NewsCategory;
+//   image_url?: string;
+// }) {
+//   const supabase = await createServerClient()
+  
+//   const {
+//     data: { user },
+//   } = await supabase.auth.getUser() 
+
+//   if (!user) {
+//     throw new Error("Usuario no autenticado")
+//   }
+//   const { error } = await supabase.from("news_articles").insert({
+//     title: article.title,
+//     content: article.content,
+//     category: article.category,
+//     image_url: article.image_url,
+//     author_id: user.id,
+//   })
+  
+//   if (error) {
+//     console.error("Error creating news article:", error)
+//     return false
+//   }
+
+//   return true
+// }

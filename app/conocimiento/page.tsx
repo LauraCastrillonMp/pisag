@@ -49,6 +49,8 @@ export default async function ConocimientoPage() {
     return sections.find((s) => toSlug(s.title) === slug)
   }).filter(Boolean);
 
+  console.log({ filteredSections })
+
   return (
     <div className="min-h-screen bg-white">
       <section className="bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 py-16 relative overflow-hidden">
@@ -77,8 +79,11 @@ export default async function ConocimientoPage() {
                 const userAttempt = userAttempts.find((a) => a.section_id === section.id)
                 const isCompleted = !!userAttempt
 
+                const titleSlug = toSlug(section?.title)
+                console.log({ titleSlug, sectionTitle: section?.title })
+
                 return (
-                  <Link key={section.id} href={`/conocimiento/${section.id}/contenido`} className="block group">
+                  <Link key={section.id} href={`/conocimiento/${section?.id}`} className="block group">
                     <Card className="bg-white border border-slate-200 hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
                       <div className="relative h-40 bg-gradient-to-br from-slate-900 to-blue-900 overflow-hidden">
                         <Image

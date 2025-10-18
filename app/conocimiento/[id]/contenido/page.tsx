@@ -6,14 +6,14 @@ import { ArrowLeft, BookOpen, Play } from "lucide-react"
 
 // Content data for each knowledge section
 const sectionContent = {
-  "astronomia": {
-    title: "Astronomía",
+  "Astronomia": {
+    title: "AstronomÍa",
     sections: [
       {
         id: "que-es",
         title: "¿Qué es?",
         content: "La astronomía es la ciencia que estudia el universo, incluyendo los astros como planetas, estrellas, galaxias y otros cuerpos celestes. Se encarga de analizar su origen, evolución, composición y movimientos.",
-        image: "/telescope-silhouette-against-milky-way-night-sky.jpg"
+        image: "https://topratereviews.com/wp-content/uploads/2020/10/telescope-vs-binoculars-difference-740x282.jpg"
       },
       {
         id: "conceptos-fundamentales",
@@ -42,7 +42,7 @@ const sectionContent = {
         id: "que-es",
         title: "¿Qué es?",
         content: "El Sistema Solar es nuestro hogar en el vasto universo. Desde los rocosos mundos interiores hasta los gigantes gaseosos y los lejanos cuerpos helados, cada rincón de este sistema encierra maravillas y misterios por descubrir.",
-        image: "/placeholder.jpg"
+        image: "https://media.istockphoto.com/id/482954331/es/foto/sistema-solar.jpg?s=2048x2048&w=is&k=20&c=AiKo9FP76Ky3_lFHLksDCovp2gir1NC9GmQOTf46hTc="
       },
       {
         id: "planetas-interiores",
@@ -161,10 +161,10 @@ export default async function ContenidoPage({ params }: { params: Promise<{ id: 
   
   // Create a mapping from URL-friendly names to section titles
   const urlToTitleMap: Record<string, string> = {
-    'astronomia': 'Astronomía',
+    'astronomia': 'Astronomia',
     'sistema-solar': 'Sistema Solar',
-    'astrofisica': 'Astrofísica',
-    'exploracion-espacial': 'Exploración Espacial',
+    'astrofisica': 'Astrofisica',
+    'exploracion-espacial': 'Exploracion Espacial',
     'misiones-espaciales': 'Misiones Espaciales'
   }
   
