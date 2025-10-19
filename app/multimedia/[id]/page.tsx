@@ -9,6 +9,7 @@ import Link from "next/link"
 import { formatDate } from "@/utils/format"
 import { ArrowLeft, Share2, User, Calendar, Play, ImageIcon } from "lucide-react"
 import { MultimediaFavoriteButton } from "@/components/multimedia-favorite-button"
+import { MultimediaImage } from "@/components/multimedia-image"
 
 const typeIcons = {
   image: ImageIcon,
@@ -59,12 +60,10 @@ export default async function MultimediaDetailPage({ params }: { params: Promise
             <div className="relative w-full bg-background/50">
               {resource.type === "image" ? (
                 <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
-                  <Image
+                  <MultimediaImage
                     src={resource.url || "/placeholder.svg"}
                     alt={resource.title}
-                    fill
-                    className="object-contain"
-                    priority
+                    className="h-full w-full"
                   />
                 </div>
               ) : resource.type === "video" ? (

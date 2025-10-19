@@ -95,6 +95,7 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch={link.href === "/" ? true : false}
                 className={`text-sm font-medium transition-colors ${
                   isActive(link.href) ? "text-white" : "text-gray-300 hover:text-white"
                 }`}
@@ -131,11 +132,11 @@ export function Navigation() {
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link href="/perfil">Mi Perfil</Link>
+                    <Link href="/perfil" prefetch={false}>Mi Perfil</Link>
                   </DropdownMenuItem>
                   {profile.role === "admin" && (
                     <DropdownMenuItem asChild>
-                      <Link href="/admin">Panel de Administración</Link>
+                      <Link href="/admin" prefetch={false}>Panel de Administración</Link>
                     </DropdownMenuItem>
                   )}
                   <DropdownMenuSeparator />

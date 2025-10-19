@@ -7,7 +7,17 @@ import Link from "next/link"
 import { ArrowLeft, Plus, Trash2, ImageIcon, Video } from "lucide-react"
 import { formatDate } from "@/utils/format"
 import { deleteMultimedia } from "@/actions/admin"
-import Image from "next/image"
+import { MultimediaImage } from "@/components/multimedia-image"
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from "@/components/ui/alert-dialog";
 
 async function getMultimediaResources() {
   const supabase = await createServerClient()
@@ -73,7 +83,11 @@ export default async function AdminMultimediaPage() {
             >
               <div className="relative h-48 w-full bg-muted">
                 {resource.type === "image" ? (
-                  <Image src={resource.url || "/placeholder.svg"} alt={resource.title} fill className="object-cover" />
+                  <MultimediaImage 
+                    src={resource.url || "/placeholder.svg"} 
+                    alt={resource.title || "Multimedia resource"} 
+                    className="h-full w-full"
+                  />
                 ) : (
                   <div className="flex items-center justify-center h-full">
                     <Video className="h-16 w-16 text-muted-foreground" />
@@ -99,13 +113,34 @@ export default async function AdminMultimediaPage() {
                 </div>
                 <h3 className="font-semibold mb-1 line-clamp-1">{resource.title}</h3>
                 <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{resource.description}</p>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mt-2">
                   <span className="text-xs text-muted-foreground">{formatDate(resource.created_at)}</span>
-                  <form action={deleteMultimedia.bind(null, resource.id)}>
-                    <Button type="submit" variant="destructive" size="sm" className="bg-red-600 hover:bg-red-700">
-                      <Trash2 className="h-4 w-4" />
+                  <div className="flex gap-2">
+                    <Button asChild variant="secondary" size="sm">
+                      <Link href={`/admin/multimedia/editar/${resource.id}`}>Editar</Link>
                     </Button>
-                  </form>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="destructive" size="sm">
+                          <Trash2 className="h-4 w-4" />
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogTitle>¿Eliminar recurso multimedia?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          Esta acción no se puede deshacer. Se eliminará definitivamente este recurso multimedia.
+                        </AlertDialogDescription>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                          <form action={deleteMultimedia.bind(null, resource.id)}>
+                            <AlertDialogAction asChild>
+                              <Button type="submit" variant="destructive">Eliminar</Button>
+                            </AlertDialogAction>
+                          </form>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
+                  </div>
                 </div>
               </div>
             </Card>

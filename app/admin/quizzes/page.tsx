@@ -102,6 +102,9 @@ export default async function AdminQuizzesPage() {
                   <Button asChild variant="outline" size="sm" className="hover:bg-primary/10 bg-transparent">
                     <Link href={`/admin/quizzes/${section.id}/preguntas`}>Ver Preguntas</Link>
                   </Button>
+                  <Button asChild variant="secondary" size="sm" className="hover:bg-accent/10 bg-transparent">
+                    <Link href={`/admin/quizzes/editar/${section.id}`}>Editar</Link>
+                  </Button>
                   <form action={deleteQuizSection.bind(null, section.id)}>
                     <Button type="submit" variant="destructive" size="sm" className="bg-red-600 hover:bg-red-700">
                       <Trash2 className="h-4 w-4" />
