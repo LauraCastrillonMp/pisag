@@ -71,6 +71,7 @@ export function Navigation() {
     { href: "/noticias", label: "Noticias" },
     { href: "/foros", label: "Foro" },
     { href: "/conocimiento", label: "Cursos" },
+    { href: "/multimedia", label: "Multimedia" },
   ]
 
   const isActive = (href: string) => {
