@@ -86,12 +86,18 @@ export default async function ConocimientoPage() {
                   <Link key={section.id} href={`/conocimiento/${section?.id}`} className="block group">
                     <Card className="bg-white border border-slate-200 hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
                       <div className="relative h-40 bg-gradient-to-br from-slate-900 to-blue-900 overflow-hidden">
-                        <Image
-                          src={`/.jpg?height=160&width=320&query=${encodeURIComponent(section.title)}`}
-                          alt={section.title}
-                          fill
-                          className="object-cover opacity-60 group-hover:scale-110 transition-transform duration-500"
-                        />
+                        {section.image_url ? (
+                          <Image
+                            src={section.image_url}
+                            alt={section.title}
+                            fill
+                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-slate-400">
+                            Sin imagen
+                          </div>
+                        )}
                         {isCompleted && (
                           <div className="absolute top-3 right-3 bg-green-500 text-white rounded-full p-1">
                             <CheckCircle2 className="h-5 w-5" />
@@ -136,12 +142,18 @@ export default async function ConocimientoPage() {
                   <Link key={`popular-${section.id}`} href={`/conocimiento/${section.id}/contenido`} className="block group">
                     <Card className="bg-white border border-slate-200 hover:shadow-xl transition-all duration-300 overflow-hidden">
                       <div className="relative h-40 bg-gradient-to-br from-slate-900 to-blue-900 overflow-hidden">
-                        <Image
-                          src={`/.jpg?height=160&width=320&query=${encodeURIComponent(section.title)}`}
-                          alt={section.title}
-                          fill
-                          className="object-cover opacity-60 group-hover:scale-110 transition-transform duration-500"
-                        />
+                        {section.image_url ? (
+                          <Image
+                            src={section.image_url}
+                            alt={section.title}
+                            fill
+                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-slate-400">
+                            Sin imagen
+                          </div>
+                        )}
                       </div>
                       <CardHeader>
                         <CardTitle className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors">

@@ -56,7 +56,7 @@ export default async function AdminForumsPage() {
               Volver al Panel
             </Link>
           </Button>
-          <h1 className="text-4xl font-bold text-balance bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold text-balance text-foreground">
             Moderación de Foros
           </h1>
           <p className="text-muted-foreground mt-2">Gestiona hilos, posts reportados y moderación</p>

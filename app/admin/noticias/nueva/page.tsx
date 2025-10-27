@@ -31,7 +31,7 @@ export default async function NewNewsPage() {
               Volver a Noticias
             </Link>
           </Button>
-          <h1 className="text-4xl font-bold text-balance bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold text-balance text-foreground">
             Nueva Noticia
           </h1>
           <p className="text-muted-foreground mt-2">Crea un nuevo artículo de noticias astronómicas</p>

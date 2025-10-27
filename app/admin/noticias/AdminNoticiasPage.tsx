@@ -20,7 +20,7 @@ export default function AdminNoticiasPage({ noticias }: { noticias: any[] }) {
           </Button>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-bold text-balance bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold text-foreground">
                 Gestión de Noticias
               </h1>
               <p className="text-muted-foreground mt-2">Crea, edita y elimina artículos de noticias</p>
@@ -42,7 +42,7 @@ export default function AdminNoticiasPage({ noticias }: { noticias: any[] }) {
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
-                  <h3 className="font-semibold text-lg mb-2">{article.title}</h3>
+                  <h3 className="font-semibold text-lg mb-2 text-foreground">{article.title}</h3>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <span>Por {article.profiles?.username}</span>
                     <span>•</span>
@@ -54,7 +54,7 @@ export default function AdminNoticiasPage({ noticias }: { noticias: any[] }) {
                 <div className="flex items-center gap-2">
                   {/* Edit Button */}
                   <Link href={`/admin/noticias/${article.id}`}>
-                    <Button variant="secondary" size="sm" className="bg-blue-600 hover:bg-blue-700">
+                    <Button variant="secondary" size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
                       <Edit className="h-4 w-4 mr-1" />
                       Editar
                     </Button>

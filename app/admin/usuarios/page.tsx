@@ -44,7 +44,7 @@ export default async function AdminUsersPage() {
               Volver al Panel
             </Link>
           </Button>
-          <h1 className="text-4xl font-bold text-balance bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold text-balance text-foreground">
             Gestión de Usuarios
           </h1>
           <p className="text-muted-foreground mt-2">Administra roles y permisos de usuarios</p>

@@ -61,7 +61,7 @@ export default async function AdminMultimediaPage() {
           </Button>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-bold text-balance bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold text-balance text-foreground">
                 Gestión Multimedia
               </h1>
               <p className="text-muted-foreground mt-2">Administra imágenes, videos y recursos multimedia</p>

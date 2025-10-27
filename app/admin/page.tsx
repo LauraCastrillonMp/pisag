@@ -66,7 +66,7 @@ export default async function AdminPage() {
               <Activity className="h-8 w-8 text-primary" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-balance bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold text-foreground">
                 Panel de Administración
               </h1>
               <p className="text-muted-foreground mt-1">Gestiona todos los aspectos de la plataforma PISAG</p>
