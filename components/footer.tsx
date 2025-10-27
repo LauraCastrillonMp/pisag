@@ -45,8 +45,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-primary/20 text-center text-sm text-muted-foreground">
+        <div className="flex flex-row justify-between mt-12 text-sm text-muted-foreground border-t border-primary/20 pt-6">
           <p>&copy; {new Date().getFullYear()} PISAG. Todos los derechos reservados.</p>
+          <div className="">
+            <p>Desarrollado por: <a href="https://github.com/LauraCastrillonMp" className="hover:text-primary transition-colors" target="_blank">Laura</a> y <a href="https://github.com/AnaS0f" className="hover:text-primary transition-colors" target="_blank">Ana</a></p>
+          </div>
         </div>
       </div>
     </footer>

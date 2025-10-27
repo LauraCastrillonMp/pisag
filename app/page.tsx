@@ -36,7 +36,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-linear-to-b from-blue-900 to-blue-800">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="relative h-[400px] rounded-lg overflow-hidden">
@@ -47,9 +47,9 @@ export default async function HomePage() {
                 className="object-cover"
               />
             </div>
-            <div className="text-white space-y-6">
+            <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold">Astronomía</h2>
-              <p className="text-lg text-white/90 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Es la ciencia que estudia el universo, incluyendo los astros
                 como planetas, estrellas, galaxias y otros cuerpos celestes. Se
                 encarga de analizar su origen, evolución, composición y
@@ -58,7 +58,7 @@ export default async function HomePage() {
               <Button
                 size="lg"
                 asChild
-                className="bg-white text-blue-900 hover:bg-white/90 font-semibold"
+                className="bg-blue-600 text-white hover:bg-blue-700 font-semibold"
               >
                 <Link href={`/conocimiento/${sections?.find(s => s.title === "Astronomia")?.id}`}>
                   Conoce más
@@ -70,7 +70,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-linear-to-b from-slate-950 via-blue-950 to-slate-950">
+      <section className="py-20 cosmic-bg">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="text-white space-y-6">
@@ -137,7 +137,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-linear-to-b from-slate-950 via-blue-950 to-slate-950">
+      <section className="py-20 cosmic-bg">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="text-white space-y-6">
