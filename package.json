@@ -7,22 +7,22 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    
+
     "test": "vitest",
     "test:unit": "vitest run __tests__/unit",
     "test:integration": "vitest run __tests__/integration",
-    "test:performance": "vitest run __tests__/performance",
+    "test:performance": "k6 run __tests__/performance/perf.js",
     "test:watch": "vitest watch",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "test:coverage:ui": "vitest --ui --coverage",
-    
+
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:debug": "playwright test --debug",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:report": "playwright show-report",
-    
+
     "test:all": "pnpm test:unit && pnpm test:integration && pnpm test:performance",
     "test:all:e2e": "pnpm test:all && pnpm test:e2e"
   },
