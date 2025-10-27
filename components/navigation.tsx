@@ -85,8 +85,8 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <Image src="/astronomy-logo-icon.jpg" alt="PISAG Logo" width={40} height={40} className="rounded-lg" />
+            <div className=" rounded-lg flex items-center justify-center">
+              <Image src="/logo.png" alt="PISAG Logo" width={80} height={80} className="rounded-lg" />
             </div>
           </Link>
 

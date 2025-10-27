@@ -36,7 +36,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-blue-900 to-blue-800">
+      <section className="py-20 bg-linear-to-b from-blue-900 to-blue-800">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="relative h-[400px] rounded-lg overflow-hidden">
@@ -70,7 +70,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950">
+      <section className="py-20 bg-linear-to-b from-slate-950 via-blue-950 to-slate-950">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="text-white space-y-6">
@@ -137,7 +137,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950">
+      <section className="py-20 bg-linear-to-b from-slate-950 via-blue-950 to-slate-950">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="text-white space-y-6">
