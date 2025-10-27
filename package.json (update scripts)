@@ -1,9 +1,0 @@
-{
-  "scripts": {
-    "test": "vitest",
-    "test:unit": "vitest run __tests__/unit",
-    "test:integration": "vitest run __tests__/integration",
-    "test:performance": "vitest run __tests__/performance",
-    "test:acceptance": "vitest run __tests__/acceptance"
-  }
-}

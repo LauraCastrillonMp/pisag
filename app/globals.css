@@ -1,4 +1,50 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- ensure basic CSS variables & small compatibility layer --- */
+:root {
+  /* colores básicos — ajusta si tienes tema oscuro/variables en otra parte */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --muted: #f8fafc;
+  --border: #e6e6e6;
+  /* ring en formato "R G B" para usar en rgba(var(--ring-rgb), a) */
+  --ring-rgb: 59 130 246; /* azul-500 */
+}
+
+/* Añade reglas base para foco accesible si tu proyecto las usa */
+@layer base {
+  html {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  /* foco global sin depender de utilidades inexistentes */
+  :where(*:focus-visible) {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(var(--ring-rgb), 0.5);
+  }
+}
+
+/* Define utilidades que tu CSS/Componentes estaban esperando */
+@layer utilities {
+  /* clase usada frecuentemente por shadcn/plantillas */
+  .bg-background { background-color: var(--background) !important; }
+  .text-foreground { color: var(--foreground) !important; }
+  /* la barra debe escaparse en el selector */
+  .outline-ring\/50 { box-shadow: 0 0 0 4px rgba(var(--ring-rgb), 0.5) !important; }
+}
+
+/* alternativa: evitar @apply global e implementar foco por CSS */
+@layer base {
+  :where(*:focus-visible) {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.5);
+  }
+}
+
+/* opcional: si usas la librería tw-animate-css */
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
