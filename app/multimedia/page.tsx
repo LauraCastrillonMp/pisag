@@ -17,7 +17,6 @@ export default async function MultimediaPage({
   const types = [
     { value: "all", label: "Todo", icon: ImageIcon },
     { value: "image", label: "Imágenes", icon: ImageIcon },
-    { value: "video", label: "Videos", icon: Play },
     { value: "livestream", label: "En Vivo", icon: Radio },
   ];
 
@@ -36,12 +35,11 @@ export default async function MultimediaPage({
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-4">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <ImageIcon className="h-8 w-8 text-primary" />
               <h1 className="text-4xl md:text-5xl font-bold gradient-text">
                 Galería Multimedia
               </h1>
             </div>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground text-white/90">
               Explora impresionantes imágenes y videos del cosmos capturados por
               telescopios y sondas espaciales
             </p>
@@ -55,7 +53,7 @@ export default async function MultimediaPage({
           <div className="flex flex-col py-4">
             {/* Type Filter */}
             <Tabs defaultValue={params.type || "all"} className="w-full">
-              <TabsList className="grid w-full grid-cols-4 bg-background/50">
+              <TabsList className="grid w-full grid-cols-3 bg-background/50">
                 {types.map((type) => (
                   <TabsTrigger key={type.value} value={type.value} asChild>
                     <Link

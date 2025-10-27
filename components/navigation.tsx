@@ -115,7 +115,7 @@ export function Navigation() {
             {user && profile ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="flex items-center gap-2 text-white hover:bg-gray-800">
+                  <Button variant="ghost" className="flex items-center gap-2 text-white">
                     <span className="hidden sm:inline text-sm">{profile.username}</span>
                     <Avatar className="h-8 w-8">
                       <AvatarFallback className="bg-blue-600 text-white text-xs">
@@ -124,7 +124,7 @@ export function Navigation() {
                     </Avatar>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuContent align="end" className="w-56 bg-white">
                   <DropdownMenuLabel>
                     <div className="flex flex-col space-y-1">
                       <p className="text-sm font-medium">{profile.username}</p>
@@ -132,16 +132,16 @@ export function Navigation() {
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <Link href="/perfil" prefetch={false}>Mi Perfil</Link>
+                  <DropdownMenuItem className="px-2 py-2 rounded-md hover:bg-slate-100 hover:text-slate-900">
+                    <Link href="/perfil" prefetch={false} className="w-full block">Mi Perfil</Link>
                   </DropdownMenuItem>
                   {profile.role === "admin" && (
-                    <DropdownMenuItem asChild>
-                      <Link href="/admin" prefetch={false}>Panel de Administración</Link>
+                    <DropdownMenuItem className="px-2 py-2 rounded-md hover:bg-slate-100 hover:text-slate-900">
+                      <Link href="/admin" prefetch={false} className="w-full block">Panel de Administración</Link>
                     </DropdownMenuItem>
                   )}
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
+                  <DropdownMenuItem onClick={handleSignOut} className="text-destructive px-2 py-2 rounded-md hover:bg-red-50">
                     Cerrar Sesión
                   </DropdownMenuItem>
                 </DropdownMenuContent>
