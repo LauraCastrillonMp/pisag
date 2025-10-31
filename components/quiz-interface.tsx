@@ -180,20 +180,20 @@ export function QuizInterface({ section, questions }: QuizInterfaceProps) {
                     onClick={() => handleAnswerSelect(index)}
                     className={`w-full p-4 rounded-lg border-2 transition-all text-left ${
                       selectedAnswers[currentQuestionIndex] === index
-                        ? "border-primary bg-primary/20"
-                        : "border-primary/20 hover:border-primary/50 bg-background/50"
+                        ? "border-blue-600 bg-blue-50"
+                        : "border-slate-200 hover:border-slate-300 bg-white"
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <div
                         className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
                           selectedAnswers[currentQuestionIndex] === index
-                            ? "border-primary bg-primary"
-                            : "border-muted-foreground"
+                            ? "border-blue-600 bg-blue-600"
+                            : "border-slate-300"
                         }`}
                       >
                         {selectedAnswers[currentQuestionIndex] === index && (
-                          <div className="w-3 h-3 rounded-full bg-background" />
+                          <div className="w-3 h-3 rounded-full bg-white" />
                         )}
                       </div>
                       <span className="flex-1">{option}</span>
