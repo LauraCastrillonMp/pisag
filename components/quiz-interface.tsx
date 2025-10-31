@@ -77,7 +77,7 @@ export function QuizInterface({ section, questions }: QuizInterfaceProps) {
     const percentage = Math.round((score / maxScore) * 100)
 
     return (
-      <div className="min-h-screen bg-background cosmic-bg py-12">
+      <div className="min-h-screen py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <Card className="glass border-primary/20">
@@ -149,7 +149,7 @@ export function QuizInterface({ section, questions }: QuizInterfaceProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background cosmic-bg py-12">
+    <div className="min-h-screen py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           {/* Progress */}
